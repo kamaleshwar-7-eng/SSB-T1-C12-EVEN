@@ -1,22 +1,23 @@
 # SSB-T1-C12-EVEN
-AIM:
+# AIM:
 
 To write a program for mean, variance and cross correlation in SCILAB and verify the output.
 
-EQUIPMENTS NEEDED:
+# EQUIPMENTS NEEDED:
 
-.Computer with i3 Processor
+  *Computer with i3 Processor
 
-.SCI LAB
+  *SCI LAB
 
-ALGORITHM:
+# ALGORITHM:
 
 Define the Function: Specify the function you want to simulate. For example, f(x)=sin⁡(x)f(x)=sin(x) or any other function.
 Generate Sample Points: Decide on the range and the number of sample points. Generate these sample points within the desired range.
 Evaluate the Function: Compute the function values at each of these sample points.
 Compute Mean, Variance and Cross Correlation: Use Scilab's functions to calculate the mean and variance of the computed function values.
 Display Results: Output the computed mean variance and Cross Correlation
-PROCEDURE:
+
+# PROCEDURE:
 
 1.Refer Algorithms and write code for the experiment.
 
@@ -30,9 +31,41 @@ PROCEDURE:
 
 6.Verify the generated results
 
-PROGRAM:
+# PROGRAM:
+```matlab
+ac=20;  
+Am=10; 
+fc=3830;
+fm=383;
+fs=38300; 
+t=0:1/fs:2/fm; 
+wc=2*3.14*fc; wm=2*3.14*fm;
+e1=(Am*sin(wm*t));
+subplot(4,1,1);
+plot(t,e1); 
+e2=(ac*sin(wc*t)); 
+subplot(4,1,2); 
+plot(t,e2);
+sbsc1=(Am/2.*cos(wc*t-wm*t))-(Am/2.*cos(wc*t+wm*t));
+sbsc2=(Am/2.*cos(wc*t-wm*t))+(Am/2.*cos(wc*t+wm*t)); 
+e3=(sbsc2)+(sbsc1); 
+subplot(4,1,3);
+plot(t,e3);
+e4=(sbsc2)-(sbsc1); 
+subplot(4,1,4); 
+plot(t,e4);
+xgrid;
+```
 
-OUTPUT GRAPH:
+# OUTPUT GRAPH:
 
-RESULT:
+<img width="1532" height="993" alt="FM Modulation using scilab" src="https://github.com/user-attachments/assets/86045ad9-1371-4ded-995c-9df4665e4776" />
+
+# TABULAR COLUMN:
+
+![SSBSC Table](https://github.com/user-attachments/assets/8dd288fd-9786-4974-b6fa-7ea76fffb8d4)
+
+
+# RESULT:
+Thus, the SSB-SC-AM Modulation and Demodulation is experimentally done and the output is verified.
 
